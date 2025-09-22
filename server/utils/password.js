@@ -10,4 +10,13 @@ const hashPassword = async (password) => {
   }
 };
 
-export { hashPassword };
+const verifyPassword = async (upassword, password) => {
+  try {
+    const verified_password = await bcryptjs.compare(upassword, password);
+    return verified_password;
+  } catch (error) {
+    console.log(`Error on verifying password : ${error}`);
+  }
+};
+
+export { hashPassword, verifyPassword };
