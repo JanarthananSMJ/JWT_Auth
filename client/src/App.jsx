@@ -1,12 +1,14 @@
-import React from "react";
-import "./App.css";
 import Login from "./components/Login";
+import { Route, Routes } from "react-router-dom";
+import LoginPage from "./pages/LoginPage";
+import DashBoard from "./pages/DashBoard";
 
 const App = () => {
   return (
-    <div>
-      <Login />
-    </div>
+    <Routes>
+      <Route path="/" element={<DashBoard />} />
+      <Route path="/login" element={<LoginPage />} />
+    </Routes>
   );
 };
 
